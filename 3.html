@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Treasure Hunt</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-pink-50">
+  <div class="quiz-container bg-white shadow-lg rounded-lg p-6 max-w-xl mx-auto relative z-10">
+    <!-- Adjusted heading sizes for better visibility -->
+    <h1 class="text-3xl sm:text-4xl font-bold text-center text-pink-600 mb-4">💖 Treasure Hunt 💖</h1>
+    <h2 id="question" class="text-lg sm:text-xl font-semibold text-purple-700 mb-4">What's my fav memory of us?</h2>
+
+    <div id="options" class="grid grid-cols-2 gap-4">
+      <!-- Video Options as interactive buttons -->
+      <div class="option-container relative rounded-md overflow-hidden shadow-lg">
+        <video class="option-video w-full h-48 sm:h-56 md:h-64 lg:h-72 rounded-md cursor-pointer" src="videos/a.mp4" autoplay loop muted></video>
+        <button class="absolute inset-0 bg-transparent text-white text-xl font-bold hover:bg-black hover:bg-opacity-50 transition-opacity opacity-0 hover:opacity-100 flex justify-center items-center">a</button>
+      </div>
+      <div class="option-container relative rounded-md overflow-hidden shadow-lg">
+        <video class="option-video w-full h-48 sm:h-56 md:h-64 lg:h-72 rounded-md cursor-pointer" src="videos/b.mp4" autoplay loop muted></video>
+        <button class="absolute inset-0 bg-transparent text-white text-xl font-bold hover:bg-black hover:bg-opacity-50 transition-opacity opacity-0 hover:opacity-100 flex justify-center items-center">b</button>
+      </div>
+      <div class="option-container relative rounded-md overflow-hidden shadow-lg">
+        <video class="option-video w-full h-48 sm:h-56 md:h-64 lg:h-72 rounded-md cursor-pointer" src="videos/d.mp4" autoplay loop muted></video>
+        <button class="absolute inset-0 bg-transparent text-white text-xl font-bold hover:bg-black hover:bg-opacity-50 transition-opacity opacity-0 hover:opacity-100 flex justify-center items-center">c</button>
+      </div>
+      <div class="option-container relative rounded-md overflow-hidden shadow-lg">
+        <video class="option-video w-full h-48 sm:h-56 md:h-64 lg:h-72 rounded-md cursor-pointer" src="videos/c.mp4" autoplay loop muted></video>
+        <button class="absolute inset-0 bg-transparent text-white text-xl font-bold hover:bg-black hover:bg-opacity-50 transition-opacity opacity-0 hover:opacity-100 flex justify-center items-center">d</button>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div id="progress-tracker" class="flex justify-center items-center mb-6">
+      <span class="heart-icon">❤️</span>
+      <span class="heart-icon">❤️</span>
+      <span class="heart-icon">❤️</span>
+      <span class="heart-icon">🤍</span>
+      <span class="heart-icon">🤍</span>
+    </div>
+  </div>
+
+  <script>
+    const options = document.querySelectorAll('.option-container');
+    const correctAnswer = 'd';  // Correct answer for this question
+
+    options.forEach((container) => {
+      const video = container.querySelector('video');
+      const button = container.querySelector('button');
+      
+      button.addEventListener('click', () => {
+        if (button.textContent === correctAnswer) {
+          window.location.href = "bookinitial.html";  // Redirect to next question page
+        } else {
+          alert("Wrong answer! Try again.");
+        }
+      });
+      
+      // Optional: Pause video when clicked
+      video.addEventListener('click', () => {
+        video.pause();  // Pause video when clicked
+      });
+    });
+  </script>
+</body>
+</html>

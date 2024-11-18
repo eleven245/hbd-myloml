@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Treasure Hunt</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-pink-50">
+  <div class="quiz-container bg-white shadow-lg rounded-lg p-8 max-w-xl mx-auto relative z-10">
+    <h1 class="text-4xl font-bold text-center text-pink-600 mb-6">💖 Treasure Hunt 💖</h1>
+    <h2 id="question" class="text-xl font-semibold text-purple-700 mb-4">My Favourite gesture?</h2>
+
+    <div id="options" class="grid grid-cols-1 gap-4">
+      <button class="option">Hug</button>
+      <button class="option">Kiss</button>
+      <button class="option">Hand-Holding</button>
+      <button class="option">Slap</button>
+    </div><br><br>
+
+    <div id="progress-tracker" class="flex justify-center items-center mb-6">
+      <span class="heart-icon">❤️</span>
+      <span class="heart-icon">❤️</span>
+      <span class="heart-icon">🤍</span>
+      <span class="heart-icon">🤍</span>
+      <span class="heart-icon">🤍</span>
+    </div>
+  </div>
+
+  <script>
+    const options = document.querySelectorAll('#options button');
+    const correctAnswer = 'Hug';  // Correct answer for this question
+
+    options.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        if (event.target.textContent === correctAnswer) {
+          window.location.href = "carousel.html";  // Redirect to next question page
+        } else {
+          alert("Wrong answer! Try again.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

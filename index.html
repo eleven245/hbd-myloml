@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Treasure Hunt</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-pink-50 relative overflow-hidden">
+  <!-- Background Stickers -->
+  <div class="background-stickers"></div>
+
+  <!-- Main Quiz Container -->
+  <div class="quiz-container bg-white shadow-lg rounded-lg p-8 max-w-xl mx-auto relative z-10">
+    <h1 class="text-4xl font-bold text-center text-pink-600 mb-6 animate-pulse">💖 Treasure Hunt 💖</h1>
+
+    <!-- Progress Tracker -->
+    <div id="progress-tracker" class="flex justify-center items-center mb-6">
+      <span class="text-2xl heart-icon">❤️</span>
+      <span class="text-2xl heart-icon">🤍</span>
+      <span class="text-2xl heart-icon">🤍</span>
+      <span class="text-2xl heart-icon">🤍</span>
+      <span class="text-2xl heart-icon">🤍</span>
+    </div>
+
+    <!-- Question Box -->
+    <div id="question-box" class="text-center">
+      <h2 id="question" class="text-xl font-semibold text-purple-700 mb-4">
+        <!-- Animated Question -->
+      </h2>
+
+      <!-- Options -->
+      <div id="options" class="grid grid-cols-1 gap-4">
+        <!-- Dynamically injected options -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Player (Hidden) -->
+  <audio id="reward-sound" src="kaaga-re.mp3" preload="auto"></audio>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

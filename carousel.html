@@ -1,0 +1,53 @@
+<html><head>
+    <link rel="stylesheet" href="carousel.css">
+    <!-- Other head elements like title or meta tags can go here -->
+  </head><body><main>
+    <ul class='slider'>
+      <li class='item' style="background-image: url('images/image1.jpg')">
+        <div class='content'>
+          <h2 class='title'>Your Amazing...</h2>
+          <p class='description'>I was thinking about you today and couldn't help but smile. Your presence has a way of making everything better.</p>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('images/image2.jpg')">
+        <div class='content'>
+          <h2 class='title'>"You are Magical"</h2>
+          <p class='description'>"Are you a magician? Because whenever I look at you, everyone else disappears. ✨"</p>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('images/image3.jpg')">
+        <div class='content'>
+          <h2 class='title'>"You are Always in my mind"</h2>
+          <p class='description'>"You're like a fine wine – you get better with time. 😍</p>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('images/image4.jpg')">
+        <div class='content'>
+          <h2 class='title'>"When I Lost I Find You.."</h2>
+          <p class='description'>"Do you have a map? Because I just keep getting lost in your eyes every time I see you. 🌟"</p>
+        </div>
+      </li>
+      <li class='item' style="background-image: url('images/image5.jpg')">
+        <div class='content'>
+          <h2 class='title'>"You are cute .."</h2>
+          <p class='description'>"If you were a cat, you'd purr-fectly steal my heart."</p>
+        </div>
+      </li>
+    </ul>
+    <nav class='nav'>
+      <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+      <button class="next-question-btn" onclick="window.location.href='3.html'">Next Question</button>
+      <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+    </nav>
+  </main>
+  <audio id="bgm" autoplay loop muted>
+    <source src="cute.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  </body>
+  
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- partial -->
+  <script  src="./carousel.js"></script>
+</html>

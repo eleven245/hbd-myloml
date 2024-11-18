@@ -1,0 +1,165 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Apply Poppins font */
+body {
+  font-family: 'Poppins', sans-serif;
+  cursor: url('https://cdn.jsdelivr.net/gh/win7js/cursors@1.2/dark/cursor.cur'), auto;
+  background-color: #fbe4e4;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Quiz Container */
+.quiz-container {
+  border: 2px solid #fcb8d2;
+  background: linear-gradient(to bottom, #fff5f8, #ffe4e9);
+  box-shadow: 0 8px 16px rgba(255, 182, 193, 0.4);
+  border-radius: 15px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* Question Styling */
+.question {
+  font-size: 1.5rem;
+  color: #ff6b81;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: typing 3s steps(30) 1s forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Options Styling */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.option {
+  background-color: #fbc8d4;
+  padding: 10px;
+  border: 2px solid #fcb8d2;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.option:hover {
+  background-color: #ffacc7;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+  cursor: pointer;
+}
+
+.option:active {
+  background-color: #ff6b81;
+  color: white;
+}
+
+/* Heart Progress Tracker */
+.heart-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.heart-icon {
+  transition: color 0.3s ease-in-out;
+  font-size: 2rem;
+  color: #e60000;
+}
+
+.heart-icon.active {
+  color: #ff6b81;
+}
+
+.heart-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+/* Next Button Styling */
+.next-question-button {
+  font-size: 22px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(255, 117, 140, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.next-question-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 117, 140, 0.6);
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+}
+
+.next-question-button:active {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+}
+
+.next-question-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 117, 140, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quiz-container {
+    padding: 1.5rem;
+    width: 90%;
+  }
+
+  .question {
+    font-size: 1.3rem;
+  }
+
+  .next-question-button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  .heart-container {
+    gap: 10px;
+  }
+}
